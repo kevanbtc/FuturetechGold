@@ -1,0 +1,78 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Foundry
+/cache
+/out
+/broadcast
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+lib/
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+dist/
+build/
+
+# Private keys and sensitive data
+private_keys/
+secrets/
+*.pem
+*.key
+
+# Database
+*.db
+*.sqlite
+
+# Coverage
+coverage/
+coverage.json
+lcov.info
+
+# Documentation builds
+docs/_build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Test artifacts
+test-results/
+.pytest_cache/

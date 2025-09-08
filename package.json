@@ -1,0 +1,60 @@
+{
+  "name": "fth-gold-system",
+  "version": "1.0.0",
+  "description": "Future Tech Holdings Gold Token Platform - Dubai Licensed Private Placement",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd website && python3 -m http.server 8000",
+    "build": "forge build",
+    "test": "forge test",
+    "deploy:testnet": "./scripts/ops/deploy-testnet.sh sepolia",
+    "health-check": "./scripts/ops/health-check.sh",
+    "monitor:coverage": "node scripts/ops/monitor-coverage.js",
+    "report:coverage": "node scripts/ops/monitor-coverage.js report",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "format": "prettier --write 'contracts/**/*.sol'",
+    "coverage": "forge coverage",
+    "gas-report": "forge test --gas-report"
+  },
+  "keywords": [
+    "blockchain",
+    "gold",
+    "tokens",
+    "dubai",
+    "dmcc",
+    "chainlink",
+    "defi",
+    "compliance",
+    "private-placement"
+  ],
+  "author": "Future Tech Holdings",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevanbtc/FuturetechGold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevanbtc/FuturetechGold/issues"
+  },
+  "homepage": "https://futuretechholdings.com",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "ethers": "^6.0.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.2.0",
+    "solhint": "^4.0.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "directories": {
+    "contracts": "./contracts",
+    "scripts": "./scripts",
+    "docs": "./docs",
+    "website": "./website"
+  }
+}

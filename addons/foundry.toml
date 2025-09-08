@@ -1,0 +1,61 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["lib"]
+test = "test"
+script = "script"
+
+# Solidity version
+solc_version = "0.8.26"
+evm_version = "cancun"
+
+# Optimizer settings
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+
+# Testing configuration
+verbosity = 2
+fuzz = { runs = 256 }
+
+# Gas reporting
+gas_reports = ["*"]
+gas_reports_ignore = ["test/**/*"]
+
+# Remappings for dependencies
+remappings = [
+    "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "forge-std/=lib/forge-std/src/",
+    "ds-test/=lib/forge-std/lib/ds-test/src/"
+]
+
+# Network configurations
+[rpc_endpoints]
+mainnet = "${RPC_URL}"
+sepolia = "${RPC_URL}"
+polygon = "${RPC_URL}"
+base = "${RPC_URL}"
+arbitrum = "${RPC_URL}"
+
+# Etherscan configuration for verification
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
+polygon = { key = "${POLYGONSCAN_API_KEY}" }
+base = { key = "${BASESCAN_API_KEY}" }
+arbitrum = { key = "${ARBISCAN_API_KEY}" }
+
+# Build configuration
+[profile.default.build]
+skip = ["test/**/*"]
+
+# CI profile with stricter settings
+[profile.ci]
+fuzz = { runs = 10_000 }
+verbosity = 4
+
+# Local development profile
+[profile.dev]
+optimizer = false
+verbosity = 3
